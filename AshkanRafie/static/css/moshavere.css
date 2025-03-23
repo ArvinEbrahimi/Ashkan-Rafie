@@ -1,0 +1,59 @@
+.moshaver{
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+}
+
+.firstmshdiv{
+    margin-right: 400px;
+    height: 100vh; /* ارتفاع کل صفحه */
+}
+
+
+
+.inner1{
+    background-color: #555;
+    width: 350px; /* عرض دیو کناری */
+    height: 300px; /* ارتفاع دیو کناری */
+    border-radius: 50px;
+    /* margin-right: 400px; */
+    /* padding: 20px;
+    z-index: -1; */
+    overflow: hidden; /* مخفی کردن قسمت‌های اضافی */
+    position: absolute; /* موقعیت‌دهی مطلق */
+    left: 800px; /* فاصله از چپ */
+
+}
+
+.inner2{
+    background-color: #333;
+    width: 1000px; /* عرض دیو اصلی */
+    height: 650px;
+    border-radius: 50px;
+    position: relative; /* برای موقعیت‌دهی دیو کناری */
+    padding: 20px; /* فاصله داخلی */
+    margin-top: 100px;
+
+}
+
+.inner1 img{
+    width: 100%; /* عرض عکس */
+    height: auto; /* حفظ نسبت ابعاد */
+}
+
+.inner2 h2{
+    font-size: 34px; /* اندازه فونت تایتل */
+    font-weight: bold; /* پررنگ کردن تایتل */
+    margin-bottom: 10px; /* فاصله بین تایتل و متن */
+    color: #fff;
+}
+
+.secondmshdiv{
+    margin-top: 1000px;
+}
+
+.secondmshdiv h2{
+    font-size: 34px; /* اندازه فونت تایتل */
+    font-weight: bold; /* پررنگ کردن تایتل */
+    margin-right: 100px; /* فاصله بین تایتل و متن */
+}
+

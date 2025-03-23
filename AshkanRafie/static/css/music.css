@@ -1,0 +1,284 @@
+.music {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background-image: url('/static/img/musicbg.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: -5px;
+    
+
+
+}
+
+
+
+.firstmusicdiv {
+    position: relative;
+    margin-top: 100px;
+    width: 55%;
+    height: 500px;
+    border-top: 1px solid yellow;
+    border-left: 1px solid yellow;
+    border-bottom: 1px solid yellow;
+    border-radius: 58px 0px 0px 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.firstmusicdiv h1 {
+    margin-top: 100px;
+}
+
+.firstmusicdiv h1,
+.firstmusicdiv h2 {
+    text-align: center;
+}
+
+/* set scroll animation */
+/* RULES: calc(${width of slide-item + margin left + margin right}px * ${total slide-item}) */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-280px * 4));
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(calc(-280px * 4));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 1160px;
+    /* You can adjust or delete this line */
+}
+
+/* RULES: calc(${width of slide-item + margin left + margin right}px * ${(total slide)*2}) */
+.slide-track {
+    display: flex;
+    width: calc(280px * 1);
+}
+
+.slide-track.left {
+    animation: scroll-left 12s linear infinite;
+    /* You can set the time to any number of seconds */
+}
+
+.slide-track.right {
+    animation: scroll-right 12s linear infinite;
+    /* You can set the time to any number of seconds */
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+.slide-item {
+    width: 400px;
+    height: 400px;
+    margin: 15px;
+    border-radius: 10px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    /* Added transition for smooth effect */
+}
+
+.slide-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.678);
+}
+
+@media only screen and (max-width: 600px) {
+    .slider {
+        width: 100vw;
+    }
+}
+
+
+
+.secondmusicdiv {
+    position: absolute;
+    margin-top: 300px;
+    width: 100%;
+    height: 800px;
+    background-color: #111;
+    display: flex;
+
+    overflow: hidden;
+}
+
+.faq {
+    width: 50%;
+    margin-top: 30px;
+
+}
+
+.musicvideo {
+    width: 50%;
+    margin-top: 30px;
+    margin-right: 560px;
+}
+
+.musicvideo img {
+    display: block;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+/* From Uiverse.io by cssbuttons-io */
+.Arshive {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 7em;
+    height: 2.6em;
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 25px;
+    font-weight: 500;
+    color: var(--color);
+    background-color: transparent;
+}
+
+.Arshive:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.Arshive:hover {
+    color: #fff;
+}
+
+.Arshive:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+.Arshive:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.Arshive:active:before {
+    border: none;
+    background: #533559;
+    transition: background 0s;
+}
+
+
+.thirdmusicdiv {
+    position: absolute;
+    margin-top: 1200px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    overflow: hidden;
+
+
+
+}
+
+.thirdmusicdiv img {
+    width: 300px;
+    height: 300px;
+    margin: 0px 30px;
+
+}
+
+.imggalery {
+    height: auto;
+    margin-right: 400px;
+}
+
+.fourthmusicdiv {
+    position: absolute;
+    margin-top: 1600px;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    overflow: hidden;
+
+
+}
+
+.card {
+    position: relative;
+    width: 25em;
+    height: 25em;
+    box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+    margin: 0px 40px;
+}
+
+
+
+.card .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #eeeeee9f;
+}
+
+.card .price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #ffffff;
+}
+
+
+
+.text {
+    max-width: 55px;
+}
+
+.image {
+    background: rgb(241, 241, 241);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.cardgroups{
+    display: flex;
+    margin-top: 100px;
+}

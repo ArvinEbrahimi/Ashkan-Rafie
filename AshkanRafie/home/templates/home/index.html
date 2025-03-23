@@ -1,0 +1,305 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اشکان رفیعی</title>
+    <link href="{% static 'vendor/bootstrap.rtl.min.css'%}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/home/main.css' %}">
+</head>
+
+
+<body class="bg-black text-white home">
+    <nav class="navbar navbar-expand-lg navbar-dark d header_items">
+        <div class="container-fluid">
+            <a href="/"> <img src="{% static 'img/logo.png' %}" alt="logo" width="200px"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                </ul>
+                <ul class="navbar-nav mx-auto  border-bottom rounded-bottom-5 border-start border-end px-5 pb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active pe-5" aria-current="page" href="index.html">خانه</a>
+                    </li>
+                    <li class="nav-item pe-5 ps-3">
+                        <a class="nav-link" href="music.html">موسیقی</a>
+                    </li>
+                    <li class="nav-item pe-5 ps-3">
+                        <a class="nav-link" href="azmoon.html">آزمون</a>
+                    </li>
+                    <li class="nav-item pe-5 ps-3">
+                        <a class="nav-link" href="moshavere.html">مشاوره</a>
+                    </li>
+                    <li class="nav-item pe-5 ps-3">
+                        <a class="nav-link" href="blog.html">بلاگ</a>
+                    </li>
+                    <li class="nav-item ps-3">
+                        <a class="nav-link" href="Darbare.html">درباره من</a>
+                    </li>
+
+                </ul>
+                <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
+                    data-bs-target="#searchModal">
+                    <i class="fas fa-search "></i>
+                </button>
+                <button type="button" class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button>
+            </div>
+        </div>
+    </nav>
+    <main class="hero-image ">
+        <div class="hero-overlay d-flex align-items-end ">
+            <div class="container text-start text-white p-5 mb-5">
+                <h1 class="display-4 fw-bold mb-4 border-bottom border-5 w-50">اشکان رفیعی</h1>
+                <p class="lead mb-4">
+                    اشکان رفیعی، متولد 17 اردیبهشت 1372، محقق و نظریه‌پرداز در زمینه‌ی فلسفه‌ی اخلاق، فلسفه‌ی سیاسی و
+                    فلسفه‌ی هنر.
+                    اشکان در دانشگاه هنر و توسعه‌ی کسب‌وکار و حرفه‌ای، متخصص بازاریابی و فروش با تمرکز بر کارآفرینی
+                    استراتژیک. او
+                    دارای کارشناسی ارشد مدیریت بازرگانی و دکترای فلسفه از دانشگاه تهران و دانشگاه آزاد اسلامی است. در
+                    کنار
+                    فعالیت‌های علمی و حرفه‌ای، او به‌عنوان تراپیست و خواننده نیز شناخته می‌شود.
+                </p>
+                <a href="Darbare.html"><button class=" bishtarbtn rounded-3 ps-5 pe-5 pt-2 pb-2 mb-5   ">بیشتر</button></a>
+            </div>
+        </div>
+        <div class="container d-block align-items-end ">
+            <div class=" secondpart container text-start text-white mb-5 ">
+                <div class="container py-5">
+                    <h2 class="text-center mb-4 text-light">
+                        EVENTS 2025-2026
+                    </h2>
+                    <div class="carousel slide" data-ride="carousel" id="imageCarousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#">
+                                        <img alt="Placeholder image 1, a simple gray box with dimensions 256x256 pixels"
+                                            class="d-block w-100 pe-5 caroselimg" height="256"
+                                            src="{% static 'img/Carousel1.png' %}" width="256" />
+                                    </a>
+                                    <a href="#">
+                                        <img alt="Placeholder image 2, a simple gray box with dimensions 256x256 pixels"
+                                            class="d-block w-100 pe-5 caroselimg" height="256"
+                                            src="{% static 'img/Carousel2.png' %}" width="256" />
+                                    </a>
+                                    <a href="#">
+                                        <img alt="Placeholder image 3, a simple gray box with dimensions 256x256 pixels"
+                                            class="d-block w-100 caroselimg" height="256" src="{% static 'img/Carousel3.png' %}"
+                                            width="256" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#">
+                                        <img alt="Placeholder image 1, a simple gray box with dimensions 256x256 pixels"
+                                            class="d-block w-100 pe-5 caroselimg" height="256"
+                                            src="static/img/Carousel1.png" width="256" />
+                                    </a>
+                                    <a href="#">
+                                        <img alt="Placeholder image 2, a simple gray box with dimensions 256x256 pixels"
+                                            class="d-block w-100 pe-5 caroselimg" height="256"
+                                            src="static/img/Carousel2.png" width="256" />
+                                    </a>
+                                    <a href="#">
+                                        <img alt="Placeholder image 3, a simple gray box with dimensions 256x256 pixels"
+                                            class="d-block w-100 caroselimg" height="256" src="static/img/Carousel3.png"
+                                            width="256" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" data-slide="prev" href="#imageCarousel" role="button">
+                            <span aria-hidden="true" class="carousel-control-prev-icon">
+                            </span>
+                            <span class="sr-only">
+                                Previous
+                            </span>
+                        </a>
+                        <a class="carousel-control-next" data-slide="next" href="#imageCarousel" role="button">
+                            <span aria-hidden="true" class="carousel-control-next-icon">
+                            </span>
+                            <span class="sr-only">
+                                Next
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class=" d-block align-items-end ">
+            <div class="thirdpart  text-start text-white mb-5 ">
+                <img class="bioimg" src="{% static 'img/bio.png' %}" alt="" width="30%">
+                <div class="biocontainer">
+                    <h2>بیوگرافی</h2>
+                    <p>اشکان رفیعی، متولد ۱۷ اردیبهشت ۱۳۷۲ در تهران، یکی از چهره‌های چندوجهی در حوزه‌های مدیریت
+                        کسب‌وکار، فلسفه، موسیقی و توسعه فردی است. او علاوه بر فعالیت در حوزه مدیریت و مشاوره کسب‌وکار،
+                        یک خواننده و ترانه‌سرا و همچنین نظریه‌پرداز در زمینه‌های فلسفه اخلاق، فلسفه سیاسی و فلسفه هنر
+                        محسوب می‌شود.</p>
+                    <br>
+                    <p>-تحصیلات و دانش آکادمیک اشکان رفیعی دارای مدرک کارشناسی مهندسی کشاورزی – علوم دامی و کارشناسی
+                        ارشد مدیریت دامپروری و صنایع لبنی از دانشگاه آزاد اسلامی کرج است. او همچنین کارشناسی ارشد مدیریت
+                        استراتژیک را از Elearnever Sweden با معدل ۱۹.۳۸ دریافت کرده است. او علاوه بر تحصیلات دانشگاهی،
+                        در دوره‌های متعددی در مدرسه کسب‌وکار آیا شرکت کرده و تحت تعلیم دکتر یحیی علوی مهارت‌های متنوعی
+                        از جمله مدیریت احساسات، فروش حرفه‌ای، توسعه فردی، اصول و فنون مذاکره، ویدئو مارکتینگ و رهبری
+                        کسب‌وکار را فرا گرفته است.</p>
+                    <a href="https://www.linkedin.com/in/ashkan-rafiei?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><button id="bottone1"><strong>رزومه</strong></button></a>
+                    <a href="Darbare.html"><button id="bottone2"><strong>ادامه مطلب</strong></button></a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="fourthpart text-start text-white mb-5 ">
+            <div>
+                <div class="paragraph">
+                    <div class="title">مشاوره توسعه کسب</div>
+                    <p>در بخش مشاوره توسعه کسب و کار، ما به شرکت‌ها و سازمان‌ها کمک می‌کنیم تا با شناسایی فرصت‌های جدید
+                        و بهینه‌سازی فرآیندهای موجود، به رشد و توسعه پایدار دست یابند. تیم متخصص ما با تحلیل دقیق بازار،
+                        شناسایی نقاط قوت و ضعف و ارائه راهکارهای عملی، به شما در طراحی استراتژی‌های مؤثر برای افزایش
+                        بهره‌وری و رقابت‌پذیری کمک می‌کند. هدف ما این است که با استفاده از تجربیات و دانش خود، به شما در
+                        ایجاد ارزش افزوده و تحقق اهداف تجاری‌تان یاری رسانیم.</p>
+                    <a href="moshavere.html"><button class="button">
+                        مشاهده
+                    </button></a>
+                </div>
+                <div class="paragraph">
+                    <div class="title">مشاوره توسعه فردی</div>
+                    <p> در بخش مشاوره توسعه فردی، ما به افراد کمک می‌کنیم تا با شناسایی اهداف شخصی و حرفه‌ای خود، به رشد
+                        و پیشرفت در زندگی و کارشان دست یابند. این بخش شامل خدمات پرسونال برندینگ نیز می‌شود که به شما
+                        کمک می‌کند تا هویت منحصر به فرد خود را شناسایی کرده و آن را در بازار معرفی کنید. ما با ارائه
+                        راهکارهای عملی و استراتژی‌های مؤثر، به شما در تقویت مهارت‌ها، افزایش اعتماد به نفس و ایجاد
+                        شبکه‌های ارتباطی مؤثر یاری می‌رسانیم. هدف ما این است که شما را در مسیر موفقیت شخصی و حرفه‌ای‌تان
+                        همراهی کنیم.</p>
+                    <a href="moshavere.html"><button class="button">
+                        مشاهده
+                    </button></a>
+                </div>
+            </div>
+            <div class="images">
+                <div class="image-item">
+                    <img class="me-5" src="{% static 'img/AZimage1.png' %}" alt="عکس 1">
+                </div>
+                <div class="image-item">
+                    <img class="ms-5" src="{% static 'img/AZimage2.png' %}" alt="عکس 2">
+                </div>
+                <div class="image-item">
+                    <img class="me-5" src="{% static 'img/AZimage3.png' %}" alt="عکس 3">
+                </div>
+            </div>
+
+
+
+
+            <div class="fithpart text-start text-white mb-5 ">
+                <div class="divazmoon">
+                    <div class="paragraph2">
+                        <div class="title2">آزمون ها</div>
+                        <p> تست‌های روانشناسی ما به شما کمک می‌کنند تا بهتر خود را بشناسید و نقاط قوت و ضعف خود را
+                            شناسایی
+                            کنید. این تست‌ها شامل ارزیابی‌های شخصیتی، شغفی و میزان استرس و اضطراب هستند که به شما امکان
+                            می‌دهند تا با درک عمیق‌تری از خود، تصمیمات بهتری در زندگی شخصی و حرفه‌ای‌تان بگیرید. با
+                            انجام
+                            این تست‌ها، نه تنها می‌توانید به شناخت بهتری از علایق و استعدادهای خود دست یابید، بلکه
+                            می‌توانید
+                            مسیرهای جدیدی را برای رشد و توسعه فردی‌تان شناسایی کنید. ما همچنین خدمات مشاوره‌ای را پس از
+                            انجام تست‌ها ارائه می‌دهیم تا به شما در تفسیر نتایج و برنامه‌ریزی برای آینده‌تان کمک کنیم.
+                        </p>
+                        <a href="azmoon.html"><button class="button">
+                            مشاهده
+                        </button></a>
+                    </div>
+                </div>
+                <div class="images">
+                    <div class="image-item2">
+                        <img src="{% static 'img/AZimage4.png' %}" alt="عکس 1">
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <h4>آزمون ها</h4>
+                            <ul>
+                                <li><a href="#">• تست‌های استرس و اضطراب</a></li>
+                                <li><a href="#">• تست‌های شغلی</a></li>
+                                <li><a href="#">• تست‌های شخصیتی</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>درباره من</h4>
+                            <ul>
+                                <li><a href="#">• فلسفه</a></li>
+                                <li><a href="#">• کسب و کار</a></li>
+                                <li><a href="#">• موسیقی</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>مشاوره ها</h4>
+                            <ul>
+                                <li><a href="#">• توسعه فردی</a></li>
+                                <li><a href="#">• توسعه کسب و کار</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>ASHKAN RAFIE</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
