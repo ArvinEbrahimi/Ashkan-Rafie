@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.humanize",
     "home.apps.HomeConfig",
     "account.apps.AccountConfig",
+    "blog.apps.BlogConfig",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -119,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 
 
@@ -139,3 +145,8 @@ MESSAGE_TAGS = {
     message_constants.WARNING: "warning",
     message_constants.ERROR: "danger",
 }   
+
+
+SILENCED_SYSTEM_CHECKS = [
+    "ckeditor.W001",  # CKEditor 4.22.1 warning
+]

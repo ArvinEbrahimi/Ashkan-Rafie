@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تایتل</title>
+    <link href="{% static 'vendor/bootstrap.rtl.min.css'%}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/blog/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog/singleblog.css' %}">
+</head>
+<body class="single bg-black text-white ">
+    <div class="container singleblog">
+        <img src="{{ blog.image.url }}" alt="">
+        <div class="innersingle">
+            <h1>{{blog.title}}</h1>
+            <p>{{blog.content | safe}}</p>
+            <a href="{%  url 'blog:blog_page' page_num=1 %}"><button class="button">
+                بازگشت به فهرست
+            </button></a>
+        </div>
+    </div>
+    
+</body>
+</html>

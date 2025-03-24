@@ -1,0 +1,109 @@
+.blog {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+}
+
+.card {
+    width: 300px;
+    /* عرض کارت */
+    border-radius: 10px;
+    /* گوشه‌های گرد */
+    overflow: hidden;
+    /* مخفی کردن قسمت‌های اضافی */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* سایه کارت */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* انیمیشن برای هاور */
+    background-color: #111;
+    /* رنگ پس‌زمینه کارت */
+    margin-bottom: 40px; /* فاصله بین ردیف‌ها */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* جابجایی کارت در حالت هاور */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    /* سایه بیشتر در حالت هاور */
+}
+
+.card img {
+    width: 100%;
+    /* عرض عکس */
+    height: auto;
+    /* حفظ نسبت ابعاد */
+}
+
+.card-title {
+    font-size: 20px;
+    /* اندازه فونت تایتل */
+    font-weight: bold;
+    /* پررنگ کردن تایتل */
+    margin: 15px;
+    /* فاصله */
+    text-align: center;
+    /* تراز کردن متن */
+    color: #fff;
+}
+
+/* From Uiverse.io by nikk7007 */
+.edame {
+    padding: 0.8em 1.8em;
+    border: 2px solid #8E599A;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #8E599A;
+    width: 100px;
+    border-radius: 30px;
+    margin-right: 95px;
+}
+
+.edame::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #8E599A;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.edame:hover::before {
+    width: 105%;
+}
+
+.edame:hover {
+    color: #fff;
+}
+
+.firstblogdiv {
+    border: 1px solid #8E599A;
+    border-radius: 30px;
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 200px;
+}
+
+
+
+.card-date {
+    font-size: 15px;
+    /* اندازه فونت تایتل */
+    margin: 15px;
+    /* فاصله */
+    text-align: center;
+    /* تراز کردن متن */
+    color:rgba(255, 255, 255, 0.5);
+}

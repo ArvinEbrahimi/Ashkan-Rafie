@@ -30,7 +30,7 @@
                 </ul>
                 <ul class="navbar-nav mx-auto  border-bottom rounded-bottom-5 border-start border-end px-5 pb-2">
                     <li class="nav-item">
-                        <a class="nav-link active pe-5" aria-current="page" href="index.html">خانه</a>
+                        <a class="nav-link active pe-5" aria-current="page" href="/">خانه</a>
                     </li>
                     <li class="nav-item pe-5 ps-3">
                         <a class="nav-link" href="music.html">موسیقی</a>
@@ -42,19 +42,15 @@
                         <a class="nav-link" href="moshavere.html">مشاوره</a>
                     </li>
                     <li class="nav-item pe-5 ps-3">
-                        <a class="nav-link" href="blog.html">بلاگ</a>
+                        <a class="nav-link" href="{% url 'blog:blog_page' page_num=1 %}">بلاگ</a>
                     </li>
                     <li class="nav-item ps-3">
                         <a class="nav-link" href="Darbare.html">درباره من</a>
                     </li>
 
                 </ul>
-                <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
-                    data-bs-target="#searchModal">
-                    <i class="fas fa-search "></i>
-                </button>
-
-
+                
+                
                 {% if user.is_authenticated %}
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -66,12 +62,16 @@
                         <li><a class="dropdown-item" href="{% url 'account:logout_page' %}">خروج از اکانت</a></li>
                     </ul>
                 </div>
-
+                
 
                 {% else %}
                 <a href="{% url 'account:register_page' %}"><button type="button"
-                        class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
-                {% endif %}
+                    class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
+                    {% endif %}
+                    <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
+                        data-bs-target="#searchModal">
+                        <i class="fas fa-search "></i>
+                    </button>
             </div>
         </div>
     </nav>
