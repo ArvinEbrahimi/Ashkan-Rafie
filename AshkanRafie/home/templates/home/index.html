@@ -53,7 +53,25 @@
                     data-bs-target="#searchModal">
                     <i class="fas fa-search "></i>
                 </button>
-                <button type="button" class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button>
+
+
+                {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{user.first_name}}
+                        <img src="{% static 'img/logoaccount.png'%}" alt="" width="40px">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'account:logout_page' %}">خروج از اکانت</a></li>
+                    </ul>
+                </div>
+
+
+                {% else %}
+                <a href="{% url 'account:register_page' %}"><button type="button"
+                        class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -70,7 +88,8 @@
                     کنار
                     فعالیت‌های علمی و حرفه‌ای، او به‌عنوان تراپیست و خواننده نیز شناخته می‌شود.
                 </p>
-                <a href="Darbare.html"><button class=" bishtarbtn rounded-3 ps-5 pe-5 pt-2 pb-2 mb-5   ">بیشتر</button></a>
+                <a href="Darbare.html"><button
+                        class=" bishtarbtn rounded-3 ps-5 pe-5 pt-2 pb-2 mb-5   ">بیشتر</button></a>
             </div>
         </div>
         <div class="container d-block align-items-end ">
@@ -95,8 +114,8 @@
                                     </a>
                                     <a href="#">
                                         <img alt="Placeholder image 3, a simple gray box with dimensions 256x256 pixels"
-                                            class="d-block w-100 caroselimg" height="256" src="{% static 'img/Carousel3.png' %}"
-                                            width="256" />
+                                            class="d-block w-100 caroselimg" height="256"
+                                            src="{% static 'img/Carousel3.png' %}" width="256" />
                                     </a>
                                 </div>
                             </div>
@@ -159,7 +178,9 @@
                         در دوره‌های متعددی در مدرسه کسب‌وکار آیا شرکت کرده و تحت تعلیم دکتر یحیی علوی مهارت‌های متنوعی
                         از جمله مدیریت احساسات، فروش حرفه‌ای، توسعه فردی، اصول و فنون مذاکره، ویدئو مارکتینگ و رهبری
                         کسب‌وکار را فرا گرفته است.</p>
-                    <a href="https://www.linkedin.com/in/ashkan-rafiei?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><button id="bottone1"><strong>رزومه</strong></button></a>
+                    <a
+                        href="https://www.linkedin.com/in/ashkan-rafiei?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><button
+                            id="bottone1"><strong>رزومه</strong></button></a>
                     <a href="Darbare.html"><button id="bottone2"><strong>ادامه مطلب</strong></button></a>
 
                 </div>
@@ -178,8 +199,8 @@
                         بهره‌وری و رقابت‌پذیری کمک می‌کند. هدف ما این است که با استفاده از تجربیات و دانش خود، به شما در
                         ایجاد ارزش افزوده و تحقق اهداف تجاری‌تان یاری رسانیم.</p>
                     <a href="moshavere.html"><button class="button">
-                        مشاهده
-                    </button></a>
+                            مشاهده
+                        </button></a>
                 </div>
                 <div class="paragraph">
                     <div class="title">مشاوره توسعه فردی</div>
@@ -190,8 +211,8 @@
                         شبکه‌های ارتباطی مؤثر یاری می‌رسانیم. هدف ما این است که شما را در مسیر موفقیت شخصی و حرفه‌ای‌تان
                         همراهی کنیم.</p>
                     <a href="moshavere.html"><button class="button">
-                        مشاهده
-                    </button></a>
+                            مشاهده
+                        </button></a>
                 </div>
             </div>
             <div class="images">
@@ -224,8 +245,8 @@
                             انجام تست‌ها ارائه می‌دهیم تا به شما در تفسیر نتایج و برنامه‌ریزی برای آینده‌تان کمک کنیم.
                         </p>
                         <a href="azmoon.html"><button class="button">
-                            مشاهده
-                        </button></a>
+                                مشاهده
+                            </button></a>
                     </div>
                 </div>
                 <div class="images">
