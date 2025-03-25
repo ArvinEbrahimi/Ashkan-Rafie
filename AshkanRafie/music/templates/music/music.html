@@ -1,0 +1,206 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسیقی</title>
+    <link href="{% static 'vendor/bootstrap.rtl.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/music.css' %}">
+
+</head>
+
+<body class="bg-black text-white music">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark d header_items">
+            <div class="container-fluid">
+                <a href="/"> <img src="{% static 'img/logo.png' %}" alt="logo" width="200px"> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    </ul>
+                    <ul class="navbar-nav mx-auto  border-bottom rounded-bottom-5 border-start border-end px-5 pb-2">
+                        <li class="nav-item">
+                            <a class="nav-link  pe-5" aria-current="page" href="{% url 'home:home_page' %}">خانه</a>
+                        </li>
+                        <li class="nav-item pe-5  ps-3">
+                            <a class="nav-link active" href="{% url 'music:music_page' %}">موسیقی</a>
+                        </li>
+                        <li class="nav-item pe-5 ps-3">
+                            <a class="nav-link" href="azmoon.html">آزمون</a>
+                        </li>
+                        <li class="nav-item pe-5 ps-3">
+                            <a class="nav-link" href="moshavere.html">مشاوره</a>
+                        </li>
+                        <li class="nav-item pe-5 ps-3">
+                            <a class="nav-link" href="{% url 'blog:blog_page' page_num=1 %}">بلاگ</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a class="nav-link" href="Darbare.html">درباره من</a>
+                        </li>
+
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{user.first_name}}
+                            <img src="{% static 'img/logoaccount.png'%}" alt="" width="40px">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'account:logout_page' %}">خروج از اکانت</a></li>
+                        </ul>
+                    </div>
+
+
+                    {% else %}
+                    <a href="{% url 'account:register_page' %}"><button type="button"
+                            class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
+                    {% endif %}
+                    <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
+                        data-bs-target="#searchModal">
+                        <i class="fas fa-search "></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="firstmusicdiv">
+            <div class="slider">
+                <div class="slide-track right" id="slide-track">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slide-track left" id="slide-track">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slide-track right" id="slide-track">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slide-track left" id="slide-track">
+                </div>
+            </div>
+            </p>
+        </div>
+        <div class="secondmusicdiv p-5">
+            <div class="faq">
+                <h2 class="text-white">سوالات متداول</h2>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    {% for faq in faqs %}
+                    <div class="accordion-item bg-dark rounded-5">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed bg-dark text-white" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                {{ faq.question }}
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-light">{{ faq.answer | safe}}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="thirdmusicdiv p-5">
+            <h2 class="text-white mb-5">گالری عکس</h2>
+            <div class="imggalery">
+                {% for pic in galleries %}
+                <img src="{{pic.pic.url}}" alt="">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="fourthmusicdiv">
+            <h2 class="text-white mt-5 p-5">سینگل ترک ها</h2>
+            <div class="cardgroups">
+                {% for music in recent_tracks%}
+                <a href="{% url 'music:singletrack_detail' slug=music.slug %}">
+                    <div class="card">
+                        <img class="image" src="{{music.cover_image.url}}">
+                        <span class="title"></span>
+                        <span class="price">{{music.title}}</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            <a href="{% url 'music:singletrack_page' page_num=1 %}"><button class="Arshive mt-5">آرشیو</button></a>
+        </div>
+    </main>
+    <footer class="footer musicfooter " style="margin-top: 3600px;">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>آزمون ها</h4>
+                    <ul>
+                        <li><a href="#">• تست‌های استرس و اضطراب</a></li>
+                        <li><a href="#">• تست‌های شغلی</a></li>
+                        <li><a href="#">• تست‌های شخصیتی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>درباره من</h4>
+                    <ul>
+                        <li><a href="#">• فلسفه</a></li>
+                        <li><a href="#">• کسب و کار</a></li>
+                        <li><a href="#">• موسیقی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>مشاوره ها</h4>
+                    <ul>
+                        <li><a href="#">• توسعه فردی</a></li>
+                        <li><a href="#">• توسعه کسب و کار</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>ASHKAN RAFIE</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="static/js/vendor/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

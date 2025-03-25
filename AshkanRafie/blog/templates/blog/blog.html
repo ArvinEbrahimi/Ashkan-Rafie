@@ -36,7 +36,7 @@
                             <a class="nav-link pe-5" aria-current="page" href="{% url 'home:home_page' %}">خانه</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
-                            <a class="nav-link" href="music.html">موسیقی</a>
+                            <a class="nav-link" href="{% url 'music:music_page' %}">موسیقی</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
                             <a class="nav-link " href="azmoon.html">آزمون</a>
@@ -45,7 +45,7 @@
                             <a class="nav-link " href="moshavere.html">مشاوره</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
-                            <a class="nav-link active" href="blog.html">بلاگ</a>
+                            <a class="nav-link active" href="{% url 'blog:blog_page' page_num=1 %}">بلاگ</a>
                         </li>
                         <li class="nav-item ps-3">
                             <a class="nav-link" href="Darbare.html">درباره من</a>

@@ -1,0 +1,13 @@
+.SingleTracks{
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+}
+.firsttrackdiv{
+    border: 1px solid #8E599A;
+    border-radius: 30px;
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 200px;
+}

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بلاگ</title>
+    <link href="{% static 'vendor/bootstrap.rtl.min.css'%}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/SingleTracks.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/music.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body class="bg-black text-white SingleTracks">
+    <main>
+        <h1 style="margin-right: 400px;margin-top: 100px;font-weight: bold;">سینگل ترک ها</h1>
+        <div class="firstblogdiv container" style="margin-top: 80px;">
+            {% for music in tracks %}
+            <a href="{% url 'music:singletrack_detail' slug=music.slug %}">
+                <div class="card">
+                    <img class="image" src="{{music.cover_image.url}}">
+                    <span class="title" style="color: white;"></span>
+                    <span class="price" style="color: rgba(255, 255, 255, 0.6);font-size: 24px;">{{music.title}}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <nav aria-label="Page navigation example" style="margin-right: 550px;margin-top: 30px;">
+            <ul class="pagination pgn ">
+                {% if tracks.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'music:singletrack_page' page_num=tracks.previous_page_number%}"
+                        aria-label="Previous">
+                        <span aria-hidden="true" style="color: black;">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% for page in paginator.page_range %}
+                {% if tracks.number == page %}
+                <li class="page-item"><a class="page-link active-page"
+                        href="{% url 'music:singletrack_page' page_num=page%}"
+                        style="background-color: black;color: white;">{{page}}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{% url 'music:singletrack_page' page_num=page%}"
+                        style="color: black;">{{page}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if tracks.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'music:singletrack_page' page_num=tracks.next_page_number%}"
+                        aria-label="Next">
+                        <span aria-hidden="true" style="color: black;">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        </div>
+        <div style="margin-top: 50px;margin-right: 400px;margin-bottom: 400px;">
+
+            <a href="{% url 'music:music_page' %}"><button class="button">
+                    بازگشت به صفحه
+                </button></a>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تایتل</title>
+    <link href="{% static 'vendor/bootstrap.rtl.min.css'%}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/SingleTracks_detail.css' %}">
+</head>
+
+<body class="single bg-black text-white ">
+    <div class="container singletracks">
+        <div style="display: flex;" class="innersingle2">
+            <img src="{{track.cover_image.url}}" alt="">
+            <div style="padding: 100px;">
+                <p>خواننده:<span>{{track.singer}}</span></p>
+                <p>نویسنده:<span>{{track.writer}}</span></p>
+                <p>اهنگساز:<span>{{track.producer}}</span></p>
+            </div>
+
+        </div>
+
+        <div class="innersingle">
+            <h1>{{track.title}}</h1>
+            <p>{{track.content | safe}}</p>
+            <audio controls style="margin-right: 00px;">
+                <source src="{{track.file.url}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <a href="{{track.file.url}}"><button class="button" Download>
+                    دانلود
+                </button></a>
+            <a href="{% url 'music:singletrack_page' page_num=1 %}" style="display: block;margin-top: 10px;"><button class="button">
+                    بازگشت به فهرست
+                </button></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
