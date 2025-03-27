@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "account.apps.AccountConfig",
     "blog.apps.BlogConfig",
     "music.apps.MusicConfig",
+    "moshavere.apps.MoshavereConfig",
     "ckeditor",
 ]
 

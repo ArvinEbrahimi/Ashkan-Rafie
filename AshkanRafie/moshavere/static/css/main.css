@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.home{
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background-image: url('/static/img/mainbg.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: -5px;
+
+
+}
+
+.hero-image {
+    position: relative;
+    height: 100vh;
+    background: url('Stoicism\ _\ Premium\ AI-generated\ image.jpeg') no-repeat center center/cover;
+    margin-top: 56px;
+    /* Adjust this value based on the height of your navbar */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 37%;
+    margin-top: 535px;
+    display: inline-block;
+    background-image: linear-gradient(rgba(5, 5, 2, 0.5), rgba(151, 7, 156, 0.438));
+}
+
+.header_items {
+    background: #00000000;
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signbtn {
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid white;
+    transition-duration: 0.5s;
+}
+
+.signbtn:hover {
+    background-color: #fff;
+    color: #111;
+    transition-duration: 0.5s;
+}
+
+
+
+.bishtarbtn {
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid white;
+    transition-duration: 0.5s;
+
+}
+
+.bishtarbtn:hover {
+    background-color: #fff;
+    color: #111;
+    transition-duration: 0.5s;
+}
+
+.event {
+    margin: auto;
+    display: inline-block;
+}
+
+
+.secondpart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70%;
+    width: 100%;
+    margin-top: 1300px;
+    border-radius: 10px;
+    border: 1px solid yellow;
+    padding-top: 110px;
+
+}
+
+.headcarousel {
+    display: inline-block;
+
+}
+
+.caroselimg:hover {
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+
+.thirdpart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60%;
+    width: 50%;
+    margin-top: 2300px;
+    background-color: #fff;
+    border-radius: 30px 0px 0px 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+
+}
+
+.bioimg {
+    display: flex;
+    padding-top: 40px;
+}
+
+.biocontainer {
+    display: inline-block;
+    flex: 1;
+    /* متن فضای باقی‌مانده را پر کند */
+    margin-right: 15px;
+    /* فاصله بین متن و عکس */
+}
+
+.biocontainer p,.biocontainer h2{
+    color: #000;
+    display: inline-block;
+    padding: 20px;
+}
+
+.biocontainer p {
+    line-height: 30px;
+    color: #444;
+}
+
+.biocontainer h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#bottone1 {
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 24px;
+    background: #8E599A;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    width: 130px;
+    color: #444;
+
+}
+
+#bottone1:hover {
+    box-shadow: 7px 5px 56px -14px #8E599A;
+}
+
+#bottone1:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #8E599A;
+}
+
+
+#bottone2 {
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid #8E599A;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    width: 130px;
+    color: #444;
+}
+
+#bottone2:hover {
+    box-shadow: 7px 5px 56px -14px #8E599A;
+}
+
+#bottone2:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #8E599A;
+}
+
+
+
+.fourthpart {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 135%;
+    width: 100%;
+    margin-top: 3300px;
+    justify-content: space-between;
+    /* فاصله بین پاراگراف‌ها و عکس‌ها */
+    display: flex;
+    border: 1px solid #8E599A;
+    border-left: none;
+    border-right: none;
+
+}
+
+
+.paragraph {
+    flex: 1;
+    /* هر پاراگراف فضای مساوی را اشغال کند */
+    margin: 0 20px;
+    /* فاصله بین پاراگراف‌ها و عکس‌ها */
+    padding: 150px;
+    width: 70%;
+    line-height: 35px;
+
+}
+
+.paragraph p {
+    color: #999;
+}
+
+.title {
+    font-size: 30px;
+    /* اندازه فونت تایتل */
+    font-weight: bold;
+    /* پررنگ کردن تایتل */
+    margin-bottom: 20px;
+    /* فاصله بین تایتل و پاراگراف */
+
+
+}
+
+.button {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 24px;
+    font-size: 18px;
+    color: #8E599A;
+    border: 2px solid #8E599A;
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(142, 89, 154);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover::before {
+    scale: 3;
+}
+
+.button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(142, 89, 154, 0.4);
+}
+
+.button:active {
+    scale: 1;
+}
+
+.images {
+    display: flex;
+    /* چیدمان عمودی عکس‌ها */
+    flex-direction: column;
+    /* چیدمان عمودی */
+    align-items: center;
+    /* مرکز کردن عکس‌ها */
+    margin-left: 200px;
+    /* فاصله از پاراگراف‌ها */
+    margin-top: 150px;
+}
+
+.image-item {
+    margin: 20px 0;
+    /* فاصله بین عکس‌ها */
+}
+
+.image-item img {
+    width: 200px;
+    /* عرض عکس‌ها */
+    height: auto;
+    /* حفظ نسبت ابعاد */
+    border-radius: 8px;
+    /* گوشه‌های گرد عکس‌ها */
+}
+
+.fithpart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    width: 100%;
+    margin-top: 1700px;
+    display: flex;
+
+
+
+}
+
+.paragraph2 {
+
+
+    padding: 100px;
+    width: 90%;
+    line-height: 35px;
+
+
+}
+
+.paragraph2 p {
+    color: #999;
+    margin-top: 50px;
+}
+
+.title2 {
+    font-size: 50px;
+    /* اندازه فونت تایتل */
+    font-weight: bold;
+    /* پررنگ کردن تایتل */
+    margin-bottom: 50px;
+    /* فاصله بین تایتل و پاراگراف */
+
+
+}
+
+.divazmoon {
+    height: 100%;
+    width: 60%;
+
+    border: 1px solid #fff;
+    border-right: none;
+    border-radius: 350px 0px 0px 350px;
+    margin: 100px 0px;
+}
+
+.image-item2 {
+    margin-right: 300px;
+
+}
+
+.image-item2 img {
+    width: 350px;
+    /* عرض عکس‌ها */
+    height: auto;
+    /* حفظ نسبت ابعاد */
+    border-radius: 8px;
+    /* گوشه‌های گرد عکس‌ها */
+}
+
+footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    margin-top: 2900px;
+    background-color: #212121;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.25);
+    /* شادو کم‌رنگ */
+    border-radius: 80px 0 0 0;
+    padding: 20px;
+    /* فاصله داخلی */
+    display: flex;
+    /* چیدمان افقی */
+
+}
+
+.container {
+    max-width: 1170px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
