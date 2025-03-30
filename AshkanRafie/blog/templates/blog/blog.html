@@ -42,13 +42,13 @@
                             <a class="nav-link " href="azmoon.html">آزمون</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
-                            <a class="nav-link " href="moshavere.html">مشاوره</a>
+                            <a class="nav-link " href="{% url 'moshavere:moshavere_page' %}">مشاوره</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
                             <a class="nav-link active" href="{% url 'blog:blog_page' page_num=1 %}">بلاگ</a>
                         </li>
                         <li class="nav-item ps-3">
-                            <a class="nav-link" href="Darbare.html">درباره من</a>
+                            <a class="nav-link" href="{% url 'About:About_page' %}">درباره من</a>
                         </li>
 
                     </ul>
