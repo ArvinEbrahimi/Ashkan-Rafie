@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون MBTI</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+        }
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>آزمون MBTI</h1>
+        <p>
+            آزمون MBTI (Myers-Briggs Type Indicator) یک ابزار روان‌شناختی است که برای شناسایی نوع شخصیت افراد طراحی شده است. این آزمون بر اساس نظریه‌های کارل یونگ، روان‌شناس سوئیسی، توسعه یافته و به بررسی چهار بعد اصلی شخصیت می‌پردازد. این چهار بعد شامل:
+        </p>
+        <ul>
+            <li><strong>1. منبع انرژی (Extraversion - Introversion):</strong></li>
+            <p>
+                • Extraversion (برون‌گرا): افرادی که انرژی خود را از تعاملات اجتماعی و محیط بیرونی می‌گیرند. آن‌ها معمولاً اجتماعی، فعال و خوش‌صحبت هستند.
+            </p>
+            <p>
+                • Introversion (درون‌گرا): افرادی که انرژی خود را از درون و تفکر شخصی می‌گیرند. آن‌ها معمولاً آرام‌تر، فکرکننده و کمتر تمایل به تعاملات اجتماعی دارند.
+            </p>
+            <li><strong>2. جمع‌آوری اطلاعات (Sensing - Intuition):</strong></li>
+            <p>
+                • Sensing (حسی): افرادی که به جزئیات و حقایق ملموس توجه دارند و تمایل دارند از تجربیات واقعی استفاده کنند.
+            </p>
+            <p>
+                • Intuition (شهودی): افرادی که بیشتر به الگوها، احتمالات و ایده‌ها توجه می‌کنند و تمایل دارند به آینده و امکانات نگاه کنند.
+            </p>
+            <li><strong>3. تصمیم‌گیری (Thinking - Feeling):</strong></li>
+            <p>
+                • Thinking (اندیشمند): افرادی که در تصمیم‌گیری‌ها به منطق و تحلیل منطقی اهمیت می‌دهند و معمولاً بی‌طرفانه قضاوت می‌کنند.
+            </p>
+            <p>
+                • Feeling (احساسی): افرادی که در تصمیم‌گیری‌ها به احساسات و ارزش‌های انسانی توجه بیشتری دارند و معمولاً به روابط انسانی اهمیت می‌دهند.
+            </p>
+            <li><strong>4. سبک زندگی (Judging - Perceiving):</strong></li>
+            <p>
+                • Judging (داوری‌کننده): افرادی که به ساختار، برنامه‌ریزی و نظم اهمیت می‌دهند و تمایل دارند که کارها را به پایان برسانند.
+            </p>
+            <p>
+                • Perceiving (ادراکی): افرادی که به انعطاف‌پذیری، آزادی عمل و پذیرش تغییرات اهمیت می‌دهند و معمولاً تمایل دارند تا گزینه‌های بیشتری را باز نگه دارند.
+            </p>
+        </ul>
+        <p>
+            ترکیب این چهار بعد، 16 نوع شخصیت مختلف را ایجاد می‌کند، مانند INTJ، ENFP، ISTJ و غیره. هر نوع شخصیت ویژگی‌ها، نقاط قوت و ضعف خاص خود را دارد.
+        </p>
+        <a href="{% url 'exam:take_test' %}" class="button">انجام آزمون</a>
+    </div>
+</body>
+</html>

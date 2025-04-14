@@ -27,6 +27,12 @@ urlpatterns = [
     path('music/',include('music.urls')),
     path('moshavere/',include('moshavere.urls')),
     path('about/',include('About.urls')),
+    path('mbti/', include('Azmoon.urls')),
+    path('eq_test/', include('baron.urls')),
+    path('intelligence_test/', include('intelligence_test.urls')),
+    path('personality_test/', include('personality_test.urls')),
+    path('test/', include('maintests.urls')),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

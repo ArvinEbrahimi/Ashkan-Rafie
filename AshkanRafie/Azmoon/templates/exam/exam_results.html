@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتایج تست MBTI</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            margin-bottom: 30px;
+        }
+
+        .type {
+            color: #4caf50;
+            /* رنگ سبز برای نوع شخصیت */
+        }
+
+        .description {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .dimensions {
+            text-align: left;
+        }
+
+        .dimensions h3 {
+            margin-bottom: 10px;
+        }
+
+        .dimensions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .dimensions li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="container">
+        <h1>نتایج تست MBTI</h1>
+        {% if result %}
+        <div class="result">
+            <h2>نوع شخصیت: <span class="type">{{ result.personality_type }}</span></h2>
+            <p class="description">{{info}}</p>
+        </div>
+        <div class="dimensions">
+            <h3>ابعاد شخصیت:</h3>
+            <ul>
+                <li><strong>درون‌گرا (I) / برون‌گرا (E)</strong>: {{ result.IE_score }}</li>
+                <li><strong>شهود (N) / حس (S)</strong>: {{ result.SN_score }}</li>
+                <li><strong>تفکر (T) / احساس (F)</strong>: {{ result.TF_score }}</li>
+                <li><strong>قضاوت (J) / ادراک (P)</strong>: {{ result.JP_score }}</li>
+            </ul>
+            <p>زمان تکمیل: {{ result.date_taken }}</p>
+            <a href="{% url 'exam:take_test' %}" class="btn btn-secondary">انجام دوباره</a>
+            {% else %}
+            <p>نتیجه ای یافت نشد.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -3,33 +3,35 @@
     direction: rtl;
 }
 
-.firstmshdiv{
-    margin-right: 400px;
-    height: 100vh; /* ارتفاع کل صفحه */
-}
+
 
 
 
 .inner1{
     background-color: #555;
-    width: 350px; /* عرض دیو کناری */
+    width: 50vh; /* عرض دیو کناری */
     height: 300px; /* ارتفاع دیو کناری */
     border-radius: 50px;
-    /* margin-right: 400px; */
-    /* padding: 20px;
-    z-index: -1; */
     overflow: hidden; /* مخفی کردن قسمت‌های اضافی */
-    position: absolute; /* موقعیت‌دهی مطلق */
-    left: 800px; /* فاصله از چپ */
 
+}
+
+@media only screen and (max-width: 1000px) {
+    .inner1 img{
+        display: none;
+    }
+    #in1{
+        display: none;
+    }
+    #in2{
+        display: none;
+    }
 }
 
 .inner2{
     background-color: #333;
-    width: 1000px; /* عرض دیو اصلی */
-    height: 650px;
+    width: 100vh; /* عرض دیو اصلی */
     border-radius: 50px;
-    position: relative; /* برای موقعیت‌دهی دیو کناری */
     padding: 20px; /* فاصله داخلی */
     margin-top: 100px;
 
@@ -37,7 +39,6 @@
 
 .inner1 img{
     width: 100%; /* عرض عکس */
-    height: auto; /* حفظ نسبت ابعاد */
 }
 
 .inner2 h2{
@@ -47,9 +48,6 @@
     color: #fff;
 }
 
-.secondmshdiv{
-    margin-top: 1000px;
-}
 
 .secondmshdiv h2{
     font-size: 34px; /* اندازه فونت تایتل */
@@ -57,3 +55,68 @@
     margin-right: 100px; /* فاصله بین تایتل و متن */
 }
 
+
+.card {
+    width: 25em;
+    height: 25em;
+    box-shadow: 0px 1px 13px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 120ms;
+    background: #333;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 1400px){
+    .card{
+        width: 15em;
+        height: 15em;
+    }
+
+}
+
+.card:hover{
+    opacity: 0.7;
+}
+
+
+.card .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #eeeeee9f;
+}
+
+.card .price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #ffffff;
+}
+
+
+
+.text {
+    max-width: 55px;
+}
+
+.image {
+    background: rgb(241, 241, 241);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
+
+.secondmshdiv{
+    margin-top: 100px;
+}

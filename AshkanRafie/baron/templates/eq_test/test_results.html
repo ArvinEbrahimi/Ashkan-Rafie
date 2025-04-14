@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتایج تست هوش هیجانی</title>
+</head>
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.result {
+    margin-bottom: 30px;
+}
+
+.score {
+    color: #4caf50; /* رنگ سبز برای نمره */
+}
+
+.dimensions {
+    text-align: left;
+}
+
+.dimension {
+    margin: 15px 0;
+}
+
+.bar {
+    height: 20px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>نتایج تست هوش هیجانی</h1>
+        <div class="result">
+            <h2>نمره کلی: <span class="score">85</span></h2>
+        </div>
+        {% if result %}
+        <p>تاریخ آزمون: {{ result.date_taken }}</p>
+        <div class="dimensions">
+            {% for dimension, score in result.results.items %}
+            <div class="dimension">
+                <h3>{{ dimension }}</h3>
+                <div class="bar" style="width: {{score}}0%;"></div>
+                <p>نمره: {{ score }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'eq_test:take_test' %}" class="btn btn-secondary">گرفتن آزمون دوباره</a>
+        {% else %}
+        <p>هیچ نتیجه آزمونی یافت نشد.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

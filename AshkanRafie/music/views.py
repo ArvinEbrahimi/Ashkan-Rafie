@@ -1,20 +1,20 @@
 from django.shortcuts import render, get_object_or_404
-from .models import faq,gallery,SingleTrack
+from .models import faq,SingleTrack
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, InvalidPage
 # Create your views here.
 def music_page(request):
-    galleries = gallery.objects.all()
+    
     faqs = faq.objects.all()
     tracks = SingleTrack.published.all()
     recent_tracks = SingleTrack.objects.all().order_by("-published_at")[:4]
-    return render(request, "music/music.html",{'faqs':faqs,'galleries':galleries ,'tracks':tracks, 'recent_tracks':recent_tracks,})
+    return render(request, "music/music.html",{'faqs':faqs,'tracks':tracks, 'recent_tracks':recent_tracks,})
 
 
 
 
 def singletrack_page(request, page_num):
     tracks = SingleTrack.published.all()
-    paginator = Paginator(tracks, 4)
+    paginator = Paginator(tracks, 6)
 
     try:
         this_page_tracks = paginator.page(page_num)

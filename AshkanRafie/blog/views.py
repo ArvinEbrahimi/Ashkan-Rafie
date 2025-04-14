@@ -8,7 +8,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, Invali
 
 def blog_page(request, page_num):
     blogs = Blog.published.all()
-    paginator = Paginator(blogs, 2)
+    paginator = Paginator(blogs, 4)
 
     try:
         this_page_blogs = paginator.page(page_num)

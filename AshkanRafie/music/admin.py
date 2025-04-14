@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import faq,gallery,SingleTrack
+from .models import faq,SingleTrack
 # Register your models here.
 admin.site.register(faq)
-admin.site.register(gallery)
 
 @admin.register(SingleTrack)
 class SingleTrackAdmin(admin.ModelAdmin):

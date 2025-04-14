@@ -11,19 +11,7 @@ class faq(models.Model):
         return self.question
 
 
-class gallery(models.Model):
-    title = models.CharField(max_length=50,default='pic')
-    pic = models.ImageField(upload_to="musicpicgallery_img/")
-
-
-    def __str__(self):
-        return self.title
     
-
-
-
-
-
 
 
 class SingleTrack(models.Model):

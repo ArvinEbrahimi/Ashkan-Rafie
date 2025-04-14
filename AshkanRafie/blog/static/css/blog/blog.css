@@ -79,7 +79,7 @@
 }
 
 .edame:hover::before {
-    width: 105%;
+    width: 100%;
 }
 
 .edame:hover {
@@ -89,21 +89,7 @@
 .firstblogdiv {
     border: 1px solid #8E599A;
     border-radius: 30px;
-    padding: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 100px 20px 100px 0px;
     margin-top: 200px;
 }
 
-
-
-.card-date {
-    font-size: 15px;
-    /* اندازه فونت تایتل */
-    margin: 15px;
-    /* فاصله */
-    text-align: center;
-    /* تراز کردن متن */
-    color:rgba(255, 255, 255, 0.5);
-}

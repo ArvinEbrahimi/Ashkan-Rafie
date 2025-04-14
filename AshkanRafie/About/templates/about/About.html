@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/About.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Darbare.css' %}">
 </head>
 
 <body class="bg-black text-white darbare">
@@ -36,7 +36,7 @@
                             <a class="nav-link" href="{% url 'music:music_page' %}">موسیقی</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
-                            <a class="nav-link " href="azmoon.html">آزمون</a>
+                            <a class="nav-link " href="{% url 'tests:tests_page' %}">آزمون</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
                             <a class="nav-link " href="{% url 'moshavere:moshavere_page' %}">مشاوره</a>
@@ -49,7 +49,7 @@
                         </li>
 
                     </ul>
-                
+
                     {% if user.is_authenticated %}
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -61,88 +61,86 @@
                             <li><a class="dropdown-item" href="{% url 'account:logout_page' %}">خروج از اکانت</a></li>
                         </ul>
                     </div>
-                    
-    
+
+
                     {% else %}
                     <a href="{% url 'account:register_page' %}"><button type="button"
-                        class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
-                        {% endif %}
-                        <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
-                            data-bs-target="#searchModal">
-                            <i class="fas fa-search "></i>
-                        </button>
+                            class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
+                    {% endif %}
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div class="firstaboutdiv">
-            <div class="divabout1">
-                <h1>درباره من</h1>
-                <br><br><br><br>
-                {% for item in bio %}
-                <h2>بیوگرافی استاد اشکان رفیعی </h2>
-                <p>
-                    {{item.بیوگرافی | safe}}
-                </p>
-                <br><br><br><br>
-                <h2>تحصیلات و دانش آکادمیک:</h2>
-                <p>
-                    {{item.تحصیلات_دانش| safe}}
-                </p>
+        <div class="row mb-5" style="background-color: #222;">
+            <div class="firstaboutdiv row">
+                <div class="divabout1 col-md-6 ps-5">
+                    <h1 class="mb-5">درباره من</h1>
+                    {% for item in bio %}
+                    <h2>بیوگرافی استاد اشکان رفیعی </h2>
+                    <p>
+                        {{item.بیوگرافی | safe}}
+                    </p>
+                    <h2 class="mt-5">تحصیلات و دانش آکادمیک:</h2>
+                    <p>
+                        {{item.تحصیلات_دانش| safe}}
+                    </p>
+                </div>
+                <div class="col-md-6 pe-5">
+                    <img class="w-100 mt-5 ms-5" src="{{item.image1.url}}" alt="">
+                </div>
             </div>
-            <div>
-                <img src="{{item.image1.url}}" alt="">
+            <div class="secontaboutdiv row">
+                <div class="divabout2 col-md-12 mt-5 ps-5">
+                    <h2>فعالیت‌های حرفه‌ای و مدیریتی:</h2><br>
+                    <p id="p1">اشکان رفیعی بیش از ۹ سال تجربه حرفه‌ای دارد و در حوزه مدیریت فروش و توسعه کسب‌وکار فعالیت
+                        کرده است. برخی از مهم‌ترین سمت‌های او عبارت‌اند از:</p>
+                        <p id="p2">
+                            {{item.فعالیت| safe}}
+                        </p>
+                </div>
+                <div class="divabout2 col-md-12 mt-5 ps-5">
+                    <h2>علاقه‌مندی‌ها و فعالیت‌های علمی:</h2>
+                    <p id="p3">
+                        {{item.علاقمندی| safe}}
+                    </p>
+                </div>
+                <div class="col-md-3 pe-5">
+                    <img class="w-100 mt-5 ms-5" src="{{item.image2.url}}" alt="">
+                </div>
+                <div class="col-md-3" id="imgabout">
+                    <img class="w-100 mt-4 ms-5" src="{{item.image3.url}}" alt="" width="400px">
+                </div>
             </div>
+            <div class="thirdab outdiv row">
+                <div class="divabout3 col-md-12 mt-5 ps-5">
+                    <h2>فعالیت‌های هنری و موسیقی:</h2>
+                    <p>
+                        {{item.هنر| safe}}
+                    </p>
+                </div>
+                <div class="divabout3 col-md-6 mt-5 ps-5">
+                    <h2>مهارت‌ها و افتخارات:</h2>
+                    <p>
+                        {{item.مهارت| safe}}
+                    </p>
+                </div>
+                {% endfor %}
 
-        </div>
-        <div class="secontaboutdiv">
-            <div class="divabout2">
-                <h2>فعالیت‌های حرفه‌ای و مدیریتی:</h2><br>
-                <p id="p1">اشکان رفیعی بیش از ۹ سال تجربه حرفه‌ای دارد و در حوزه مدیریت فروش و توسعه کسب‌وکار فعالیت
-                    کرده است. برخی از مهم‌ترین سمت‌های او عبارت‌اند از:</p>
-                <p id="p2">
-                    {{item.فعالیت| safe}}
-                </p>
-                <br><br><br><br>
-                <h2>علاقه‌مندی‌ها و فعالیت‌های علمی:</h2>
-                <p id="p3">
-                    {{item.علاقمندی| safe}}
-                </p>
             </div>
-            <div>
-                <img src="{{item.image2.url}}" alt="" width="400px" style="margin-right: 300px;">
-                
-            </div>
-        </div>
-        <div class="thirdaboutdiv">
-            <div class="divabout3">
-                <h2>فعالیت‌های هنری و موسیقی:</h2>
-                <p>
-                    {{item.هنر| safe}}
-                </p>
-                <br><br><br><br><br>
-                <h2>مهارت‌ها و افتخارات:</h2>
-                <p>
-                    {{item.مهارت| safe}}
-                </p>
-            </div>
-            <div id="imgabout">
-                <img src="{{item.image3.url}}" alt="" width="400px">
-            </div>
-            {% endfor %}
-
         </div>
     </main>
-    <footer class="footer" style="margin-top: 3400px;">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">
                     <h4>آزمون ها</h4>
                     <ul>
-                        <li><a href="#">• تست‌های استرس و اضطراب</a></li>
-                        <li><a href="#">• تست‌های شغلی</a></li>
-                        <li><a href="#">• تست‌های شخصیتی</a></li>
+                        <li><a href="">• MBTI</a></li>
+                        <li><a href="#">•  گاردنر</a></li>
+                        <li><a href="#">• DISC </a></li>
+                        <li><a href="#">• Baron </a></li>
+
                     </ul>
                 </div>
                 <div class="footer-col">

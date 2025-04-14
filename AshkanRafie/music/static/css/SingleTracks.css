@@ -2,12 +2,47 @@
     font-family: 'Vazirmatn', sans-serif;
     direction: rtl;
 }
-.firsttrackdiv{
+
+.firstsinglediv {
     border: 1px solid #8E599A;
     border-radius: 30px;
-    padding: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 100px 0;
     margin-top: 200px;
+}
+
+.card {
+    width: 300px;
+    /* عرض کارت */
+    border-radius: 10px;
+    /* گوشه‌های گرد */
+    overflow: hidden;
+    /* مخفی کردن قسمت‌های اضافی */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* سایه کارت */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* انیمیشن برای هاور */
+    background-color: #111;
+    /* رنگ پس‌زمینه کارت */
+    margin-bottom: 40px; /* فاصله بین ردیف‌ها */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* جابجایی کارت در حالت هاور */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    /* سایه بیشتر در حالت هاور */
+}
+
+
+
+.card-title {
+    font-size: 20px;
+    /* اندازه فونت تایتل */
+    font-weight: bold;
+    /* پررنگ کردن تایتل */
+    margin: 15px;
+    /* فاصله */
+    text-align: center;
+    /* تراز کردن متن */
+    color: #eee;
 }

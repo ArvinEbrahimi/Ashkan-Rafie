@@ -1,0 +1,61 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون</title>
+</head>
+<style>
+    body {
+        font-family: 'Vazirmatn', sans-serif;
+        direction: rtl;
+        background-color: #121212;
+        /* رنگ پس‌زمینه تاریک */
+        color: #ffffff;
+        /* رنگ متن سفید */
+        font-family: Arial, sans-serif;
+        /* فونت */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* ارتفاع صفحه */
+        margin: 0;
+        /* حذف حاشیه */
+    }
+
+    .quiz-container {
+        background-color: #1e1e1e;
+        /* رنگ پس‌زمینه کارت */
+        border-radius: 10px;
+        /* گوشه‌های گرد */
+        padding: 20px;
+        /* فاصله داخلی */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        /* سایه */
+        width: 500px;
+        /* عرض کارت */
+        text-align: center;
+        /* تراز متن */
+    }
+</style>
+
+<body>
+    <div class="quiz-container">
+
+        <h1>آزمون هوش چندگانه</h1>
+        <form method="post" action="{% url 'intelligence_test:process_test' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+                {{ field|as_crispy_field }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">ثبت آزمون</button>
+        </form>
+    </div>
+</body>
+
+</html>

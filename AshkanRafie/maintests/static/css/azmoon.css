@@ -1,0 +1,164 @@
+.azmoon {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+.firstazdiv {
+    width: 45%;
+    height: 600px;
+    border-top: 1px solid #8E599A;
+    border-left: 1px solid #8E599A;
+    border-bottom: 1px solid #8E599A;
+    border-radius: 58px 0px 0px 58px;
+    overflow: hidden;
+}
+
+.innerdiv {
+    background-color: #222;
+    width: 90%;
+    height: 70%;
+    margin-left: 300px;
+    padding: 30px 50px 50px 50px;
+    line-height: 30px;
+    margin-top: 90px;
+
+}
+@media only screen and (max-width: 850px){
+    .innerdiv p{
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+    .innerdiv h2{
+        font-size: 1rem;
+        line-height: 20px;
+    }
+    .firstazdiv{
+        width: 80%;
+    }
+}
+
+
+
+.imgaz{
+    width: 30vh;
+}
+
+.imgaz:hover {
+    opacity: 0.6;
+}
+
+.imgaz:active {
+    opacity: 0.4;
+}
+.headerr{
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+
+.titleaz{
+    font-size: 1rem;
+    margin-right: 20px;
+}
+
+
+.Anjam {
+    --color: #66379b;
+    font-family: inherit;
+    display: inline-block;
+    width: 7em;
+    height: 2.6em;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 25px;
+    font-weight: 500;
+    color: var(--color);
+    background-color: transparent;
+}
+
+.Anjam:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.Anjam:hover {
+    color: #fff;
+}
+
+.Anjam:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+.Anjam:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.Anjam:active:before {
+    border: none;
+    background: #533559;
+    transition: backgroundnjam
+}
+
+
+
+
+
+
+
+
+.fourthazdiv{
+    height: 100vh;
+}
+
+.innerdivaz1{
+    background-color: #666;
+    width: 70%;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.azp1{
+    padding: 10px 30px;
+}
+
+.rezerv{
+    padding: 3px 29px;
+    color: #eee;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 18px;
+    transition-duration: 0.5s;
+}
+
+.rezerv:hover{
+    background-color: white;
+    color: #111;
+    transition-duration: 0.5s;
+}
+
+.innerdivaz2{
+    background-color: #666;
+    width: 70%;
+    height: 200px;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.azp2{
+    padding: 10px 30px;
+}
+

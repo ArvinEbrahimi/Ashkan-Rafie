@@ -19,7 +19,7 @@
 
 <body class="bg-black text-white moshaver">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark d header_items">
+        <nav class="navbar navbar-expand-lg navbar-dark header_items">
             <div class="container-fluid">
                 <a href="/"> <img src="{% static 'img/logo.png' %}" alt="logo" width="200px"> </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -38,7 +38,7 @@
                             <a class="nav-link" href="{% url 'music:music_page' %}">موسیقی</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
-                            <a class="nav-link " href="azmoon.html">آزمون</a>
+                            <a class="nav-link " href="{% url 'tests:tests_page' %}">آزمون</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
                             <a class="nav-link active" href="{% url 'moshavere:moshavere_page' %}">مشاوره</a>
@@ -62,65 +62,63 @@
                             <li><a class="dropdown-item" href="{% url 'account:logout_page' %}">خروج از اکانت</a></li>
                         </ul>
                     </div>
-                    
-    
+
+
                     {% else %}
                     <a href="{% url 'account:register_page' %}"><button type="button"
-                        class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
-                        {% endif %}
-                        <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
-                            data-bs-target="#searchModal">
-                            <i class="fas fa-search "></i>
-                        </button>
+                            class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
+                    {% endif %}
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div class="firstmshdiv">
-            <div class="inner2">
-                <div style="width: 80%; float: left;line-height: 30px;">
-                    {% for item in moshaverep %}
-                    <h2>{{item.title}}</h2>
-                    <p>
-                        {{item.content | safe}}
-                    </p>
-                    {% endfor %}
-                </div>
-                <div class="inner1">
-                    <img src="{% static 'img/moshaver1.png' %}" alt="">
-                </div>
+        <div class=" row-cols-2 d-flex">
+            <div style="width: 60%;line-height: 30px;" class="col-md-6 inner2 mx-5">
+                {% for item in moshaverep %}
+                <h2>{{item.title}}</h2>
+                <p>
+                    {{item.content | safe}}
+                </p>
+                {% endfor %}
             </div>
-            <div class="inner2" style="margin-top: 400px;">
-                <div style="width: 80%; float: left;line-height: 30px;" id="moshaveret2">
-                    {% for item in moshavereb %}
-                    <h2>{{item.title}}</h2>
-                    <p>
-                        {{item.content | safe}}
-                    </p>
-                    {% endfor %}
-                </div>
-                <div class="inner1">
-                    <img src="{% static 'img/moshaver2.png' %}" alt="">
-                </div>
+            <div class="inner1 col-md-6 float-end" id="in1">
+                <img src="{% static 'img/moshaver1.png' %}" alt="">
             </div>
         </div>
-        <div class="secondmshdiv">
+        <div class=" row-cols-auto d-flex" style="margin-top: 100px;">
+            <div style="width: 60%;line-height: 30px;" class="inner2 col-md-6 mx-5" id="moshaveret2">
+                {% for item in moshavereb %}
+                <h2>{{item.title}}</h2>
+                <p>
+                    {{item.content | safe}}
+                </p>
+                {% endfor %}
+            </div>
+            <div class="inner1 col-md-6" id="in2">
+                <img src="{% static 'img/moshaver2.png' %}" alt="">
+            </div>
+        </div>
+        </div>
+        <div class="secondmshdiv container">
             <h2 class="text-white">مشاوره</h2>
-                <div class="cardgroups container" style="width:70% ;border:1px solid yellow; padding: 100px;border-radius: 30px; margin-bottom: 100px;">
-                    {% for item in card%}
-                    <a href=""><div class="card">
+            <div class=" row container pt-5"
+                style=" border:1px solid yellow;border-radius: 30px; margin-bottom: 100px;">
+                {% for item in card%}
+                <a href="" class="col-lg-6 col-md-12">
+                    <div class="card">
                         <img class="image" src="{{item.image.url}}">
                         <span class="title" style="font-size: 20px;color: #fff;">{{item.title}}</span>
                         <span class="price">{{item.price}} تومان</span>
-                    </div></a> 
-                    {% endfor %}           
-                </div>
+                    </div>
+                </a>
+                {% endfor %}
             </div>
+        </div>
 
         </div>
     </main>
-    <footer class="footer" style="margin-top: 3400px;">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">

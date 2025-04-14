@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +14,23 @@
     <link rel="stylesheet" href="{% static 'css/blog/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/blog/singleblog.css' %}">
 </head>
+
 <body class="single bg-black text-white ">
-    <div class="container singleblog">
-        <img src="{{ blog.image.url }}" alt="">
-        <div class="innersingle">
+    <div class="container singleblog  ms-5 ">
+        <div class="row p-5">
+            <img class="col-md-12 w-50" src="{{ blog.image.url }}" alt="">
+        </div>
+        <div class="innersingle row p-5">
             <h1>{{blog.title}}</h1>
-            <p>{{blog.content | safe}}</p>
-            <a href="{%  url 'blog:blog_page' page_num=1 %}"><button class="button">
-                بازگشت به فهرست
-            </button></a>
+            <p class="mb-5">{{blog.content | safe}}</p>
+            <a href="{%  url 'blog:blog_page' page_num=1 %}" style="display: block;margin-top: 10px;"><button
+                    class="button">
+                    بازگشت به فهرست
+                </button></a>
         </div>
     </div>
-    
+
+
 </body>
+
 </html>

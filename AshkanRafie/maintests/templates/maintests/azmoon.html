@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون ها</title>
+    <link href="{% static 'vendor/bootstrap.rtl.min.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/azmoon.css' %}">
+</head>
+
+<body class="bg-black text-white azmoon overflow-x-hidden">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid h-25">
+                <a href="/"> <img src="{% static 'img/logo.png' %}" alt="logo" width="200px"> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    </ul>
+                    <ul class="navbar-nav mx-auto  border-bottom rounded-bottom-5 border-start border-end px-5 pb-2">
+                        <li class="nav-item">
+                            <a class="nav-link pe-5" aria-current="page" href="{% url 'home:home_page' %}">خانه</a>
+                        </li>
+                        <li class=" nav-item pe-5 ps-3">
+                                <a class="nav-link" href="{% url 'music:music_page' %}">موسیقی</a>
+                        </li>
+                        <li class="nav-item pe-5 ps-3">
+                            <a class="nav-link active" href="/">آزمون</a>
+                        </li>
+                        <li class="nav-item pe-5 ps-3">
+                            <a class="nav-link" href="{% url 'moshavere:moshavere_page' %}">مشاوره</a>
+                        </li>
+                        <li class="nav-item pe-5 ps-3">
+                            <a class="nav-link" href="{% url 'blog:blog_page' page_num=1 %}">بلاگ</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a class="nav-link" href="{% url 'About:About_page' %}">درباره من</a>
+                        </li>
+
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <div class="dropdown" style="margin-left: 70px;">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{user.first_name}}
+                            <img src="{% static 'img/logoaccount.png'%}" alt="" width="40px">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'account:logout_page' %}">خروج از اکانت</a></li>
+                        </ul>
+                    </div>
+
+
+                    {% else %}
+                    <a href="{% url 'account:register_page' %}"><button type="button"
+                            class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+<main>
+    <div class="firstazdiv mb-5">
+        <div class="innerdiv">
+            <h2 class="text-white">تست های روانشناسی</h2>
+            <p>در این بخش از وب‌سایت ما، شما می‌توانید چهار نوع تست روانشناسی را به صورت رایگان انجام دهید و همچنین
+                تست‌های پیشرفته‌تری را با پرداخت هزینه انجام دهید. این تست‌ها به شما کمک می‌کنند تا بهتر خود را بشناسید
+                و نقاط قوت و ضعف خود را شناسایی کنید. پس از اتمام هر تست، نتیجه آن به شما نمایش داده می‌شود و همچنین به
+                ایمیل شما ارسال خواهد شد.</p>
+        </div>
+    </div>
+    <h2 class="text-white ms-5 mb-5">تست های رایگان</h2>
+    <div class="container my-5">
+        <div class="  row row-cols-1 row-cols-md-3 row-cols-lg-4 ms-5">
+            <div class="col">
+                <div class="cardaz ">
+                    <a href="{% url 'eq_test:detail_page'%}"> <img class="imgaz" src="{% static 'img/azfree1.png' %}" alt=""></a>
+                    <h4 class="titleaz">BarOn</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cardaz ">
+                    <a href="{% url 'personality_test:detail_page'%}"> <img class="imgaz" src="{% static 'img/azfree2.png' %}" alt=""></a>
+                    <h4 class="titleaz">DISC</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cardaz ">
+                    <a href="{% url 'intelligence_test:detail_page'%}"> <img class="imgaz" src="{% static 'img/azfree3.png' %}" alt=""></a>
+                    <h4 class="titleaz">گاردلر</h4>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cardaz ">
+                    <a href="{% url 'exam:detail_page'%}"> <img class="imgaz" src="{% static 'img/azfree4.png' %} " alt=""></a>
+                    <h4 class="titleaz">MBTI</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fourthazdiv mt-5">
+        <div class="innerdivaz1">
+            <h2 class="text-white px-5 pt-3">رزرو تحلیل تخصصی</h2>
+            <p class="azp1">اگر تمایل دارید که تحلیل دقیق‌تری از نتایج خود دریافت کنید، می‌توانید با مراجعه به بخش "رزرو
+                مشاوره" در وب‌سایت، جلسه‌ای را رزرو کنید. هزینه تحلیل تخصصی در هنگام رزرو مشخص خواهد شد.</p>
+            <button type="button" class="rezerv ms-5">رزرو</button>
+        </div>
+        <div class="innerdivaz2">
+            <h2 class="text-white px-5 pt-3">تماس با ما</h2>
+            <p class="azp2">اگر سوالی دارید یا نیاز به اطلاعات بیشتری دارید، می‌توانید از طریق فرم تماس با ما در ارتباط
+                باشید. ما در سریع‌ترین زمان ممکن به سوالات شما پاسخ خواهیم داد.</p>
+        </div>
+
+    </div>
+
+
+</main>
+<footer class="footer">
+    <div class=" container">
+    <div class="row">
+        <div class="footer-col">
+            <h4>آزمون ها</h4>
+            <ul>
+                <li><a href="#">• تست‌های استرس و اضطراب</a></li>
+                <li><a href="#">• تست‌های شغلی</a></li>
+                <li><a href="#">• تست‌های شخصیتی</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>درباره من</h4>
+            <ul>
+                <li><a href="#">• فلسفه</a></li>
+                <li><a href="#">• کسب و کار</a></li>
+                <li><a href="#">• موسیقی</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>مشاوره ها</h4>
+            <ul>
+                <li><a href="#">• توسعه فردی</a></li>
+                <li><a href="#">• توسعه کسب و کار</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>ASHKAN RAFIE</h4>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'vendor/bootstrap.bundle.min.js' %}" > </script>
+
+</html>

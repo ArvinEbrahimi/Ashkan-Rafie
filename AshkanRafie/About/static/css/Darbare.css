@@ -1,0 +1,62 @@
+.darbare{
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+.firstaboutdiv{
+
+    margin-top: 100px;
+    padding: 10px;
+}
+
+.firstaboutdiv h1{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.divabout1{
+    line-height: 35px;
+    text-align: justify
+
+}
+
+.divabout1 p{
+    color: rgba(255,255,255,0.7);
+}
+
+.secontaboutdiv{
+    background-color: #222;
+    padding: 10px;
+}
+
+.divabout2{
+    line-height: 35px;
+    text-align: justify
+}
+
+#p1{
+    color: rgba(255,255,255,0.9);
+}
+
+#p2{
+    color: rgba(255,255,255,0.6);}
+
+#p3{
+    color: rgba(255,255,255,0.7);
+}
+
+.thirdaboutdiv{
+    background-color: #222;
+    padding: 10px;
+}
+
+.divabout3{
+    line-height: 35px;
+    text-align: justify
+}
+
+.divabout3 p{
+    color: rgba(255,255,255,0.7);
+}
+

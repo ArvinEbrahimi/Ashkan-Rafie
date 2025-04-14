@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+        body {
+        font-family: 'Vazirmatn', sans-serif;
+        direction: rtl;
+        background-color: #121212;
+        /* رنگ پس‌زمینه تاریک */
+        color: #ffffff;
+        /* رنگ متن سفید */
+        font-family: Arial, sans-serif;
+        /* فونت */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* ارتفاع صفحه */
+        margin: 0;
+        /* حذف حاشیه */
+    }
+</style>
+<body>
+    <h1>خطا</h1>
+    <p>{{ message }}</p>
+    <a href="{% url 'eq_test:take_test' %}">گرفتن آزمون دوباره</a>
+</body>
+</html>

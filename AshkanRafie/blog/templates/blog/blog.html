@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{% url 'music:music_page' %}">موسیقی</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
-                            <a class="nav-link " href="azmoon.html">آزمون</a>
+                            <a class="nav-link " href="{% url 'tests:tests_page' %}">آزمون</a>
                         </li>
                         <li class="nav-item pe-5 ps-3">
                             <a class="nav-link " href="{% url 'moshavere:moshavere_page' %}">مشاوره</a>
@@ -70,10 +70,6 @@
                     <a href="{% url 'account:register_page' %}"><button type="button"
                             class=" signbtn rounded-5 ps-3 pe-3 pt-1 pb-1">ثبت نام | ورود </button></a>
                     {% endif %}
-                    <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal"
-                        data-bs-target="#searchModal">
-                        <i class="fas fa-search "></i>
-                    </button>
                 </div>
             </div>
         </nav>
@@ -81,20 +77,21 @@
     <main>
 
         <div class="firstblogdiv container">
-            {% for blog in blogs %}
-            <a href="{% url 'blog:blog_detail' slug=blog.slug %}" style="text-decoration: none;">
-                <div class="card">
-
+            <div class="row">
+                {% for blog in blogs %}
+                <div class="card  me-4 col-md-3">
                     <img src="{{ blog.image.url }}" alt="عکس کارت">
                     <div class="card-title">{{ blog.title }}</div>
                     <div class="card-date">{{ blog.persian_date }}</div>
                     <a href="{% url 'blog:blog_detail' slug=blog.slug %}"><button class="edame">ادامه</button></a>
                 </div>
-            </a>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-        <nav aria-label="Page navigation example" style="margin-right: 850px;margin-top: 50px;">
-            <ul class="pagination pgn ">
+        <nav aria-label="Page navigation example" style="margin: auto;display: flex;
+            justify-content: center;
+            margin-top: 20px;">
+            <ul class="pagination">
                 {% if blogs.has_previous %}
                 <li class="page-item">
                     <a class="page-link" href="{% url 'blog:blog_page' page_num=blogs.previous_page_number%}"
@@ -125,7 +122,7 @@
             </ul>
         </nav>
     </main>
-    <footer class="footer" style="margin-top: 2000px;">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-col">

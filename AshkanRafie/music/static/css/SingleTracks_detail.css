@@ -12,34 +12,20 @@
 }
 
 
-.firstsinglediv {
-    border: 1px solid #8E599A;
-    border-radius: 30px;
-    padding: 10px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 200px;
-}
 
 
 
 .singletracks{
     border: 1px solid #8E599A;
     border-radius: 40px;
-    margin-top: 150px;
-    height: auto;
+    margin-top: 100px;
 }
 
 .singletracks img{
     border-radius: 40px 40px 0 0;
-    margin-right: 100px;
-    width: 400px;
-    margin-top: 100px;
 }
 .innersingle{
-    margin-top: 0px;
-    padding: 100px;
-    line-height: 40px;
+    line-height: 30px;
     
 
 }
@@ -50,12 +36,12 @@
 
 .innersingle p{
     color: rgba(255, 255, 255, 0.7);
+    text-align: justify;
 }
 
 .innersingle2 p{
-    margin-top: 0px;
 
-    line-height: 40px;
+    line-height: 30px;
 }
 
 .innersingle2 p span{

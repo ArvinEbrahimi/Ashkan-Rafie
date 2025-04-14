@@ -5,40 +5,75 @@
 }
 
 
-.home{
-    font-family: 'Vazirmatn', sans-serif;
-    direction: rtl;
-    background-image: url('/static/img/mainbg.png');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-position-y: -5px;
-
-
-}
-
 .hero-image {
-    position: relative;
-    height: 100vh;
-    background: url('Stoicism\ _\ Premium\ AI-generated\ image.jpeg') no-repeat center center/cover;
-    margin-top: 56px;
+    height: 150vh;
+    background: url('/static/img/mainbg.png') no-repeat center center/cover;
+
     /* Adjust this value based on the height of your navbar */
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     height: 37%;
-    margin-top: 535px;
+    margin-top: 655px;
     display: inline-block;
     background-image: linear-gradient(rgba(5, 5, 2, 0.5), rgba(151, 7, 156, 0.438));
 }
 
-.header_items {
-    background: #00000000;
+@media only screen and (max-width: 600px) {
+    .hero-overlay {
+        background-image: none;
+    }
+
+    .image-item2 {
+        display: none;
+    }
+
+    .image-item {
+        display: none;
+    }
+
+    .paragraph2 {
+        width: 80%;
+
+    }
+    .bioimg {
+        display: none;
+        
+    }
+    p{
+        font-size: 0.6rem;
+    }
+    #t1{
+        font-size: 1rem;
+    }
+    #t2{
+        font-size: 1rem;
+    }
+    #t3{
+        font-size: 1rem;
+    }
+    #t4{
+            font-size: 1rem;
+    }
+    #pasli{
+        font-size: 0.8rem;
+    }
 }
+@media only screen and (max-width: 1200px) {
+    .image-item2 {
+        display: none;
+    }
+
+    .image-item {
+        width: 10px;
+    }
+}
+
+
+.events {
+    margin-top: 130px;
+}
+
 
 .logo {
     margin: 0;
@@ -82,14 +117,8 @@
 
 
 .secondpart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     height: 70%;
     width: 100%;
-    margin-top: 1300px;
     border-radius: 10px;
     border: 1px solid yellow;
     padding-top: 110px;
@@ -101,20 +130,18 @@
 
 }
 
+.text-font {
+    font-size: 5rem;
+}
+
 .caroselimg:hover {
     opacity: 0.5;
     transition-duration: 0.3s;
 }
 
 .thirdpart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     height: 60%;
-    width: 50%;
-    margin-top: 2300px;
+    width: 80%;
     background-color: #fff;
     border-radius: 30px 0px 0px 30px;
     display: flex;
@@ -129,23 +156,31 @@
     padding-top: 40px;
 }
 
+.textrs {
+    text-align: justify;
+}
+
 .biocontainer {
     display: inline-block;
     flex: 1;
+    width: 50%;
     /* متن فضای باقی‌مانده را پر کند */
     margin-right: 15px;
     /* فاصله بین متن و عکس */
 }
 
-.biocontainer p,.biocontainer h2{
+.biocontainer p,
+.biocontainer h2 {
     color: #000;
     display: inline-block;
     padding: 20px;
+    text-align: justify;
 }
 
 .biocontainer p {
     line-height: 30px;
     color: #444;
+    text-align: justify;
 }
 
 .biocontainer h2 {
@@ -209,15 +244,7 @@
 
 
 .fourthpart {
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 135%;
     width: 100%;
-    margin-top: 3300px;
     justify-content: space-between;
     /* فاصله بین پاراگراف‌ها و عکس‌ها */
     display: flex;
@@ -231,16 +258,17 @@
 .paragraph {
     flex: 1;
     /* هر پاراگراف فضای مساوی را اشغال کند */
-    margin: 0 20px;
+
     /* فاصله بین پاراگراف‌ها و عکس‌ها */
-    padding: 150px;
     width: 70%;
     line-height: 35px;
+    text-align: justify;
 
 }
 
 .paragraph p {
     color: #999;
+    text-align: justify;
 }
 
 .title {
@@ -303,15 +331,17 @@
     /* چیدمان عمودی */
     align-items: center;
     /* مرکز کردن عکس‌ها */
-    margin-left: 200px;
     /* فاصله از پاراگراف‌ها */
-    margin-top: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.image-item {
-    margin: 20px 0;
-    /* فاصله بین عکس‌ها */
+@media screen {
+    .images {
+        display: null;
+    }
 }
+
 
 .image-item img {
     width: 200px;
@@ -323,14 +353,7 @@
 }
 
 .fithpart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     height: 40%;
-    width: 100%;
-    margin-top: 1700px;
     display: flex;
 
 
@@ -339,11 +362,13 @@
 
 .paragraph2 {
 
-
-    padding: 100px;
-    width: 90%;
+    padding-bottom: 50px;
+    padding-top: 50px;
     line-height: 35px;
 
+    padding-right: 20px;
+    text-align: justify;
+    width: 70%;
 
 }
 
@@ -364,19 +389,14 @@
 }
 
 .divazmoon {
-    height: 100%;
-    width: 60%;
 
     border: 1px solid #fff;
     border-right: none;
     border-radius: 350px 0px 0px 350px;
-    margin: 100px 0px;
+    margin-top: 100px;
 }
 
-.image-item2 {
-    margin-right: 300px;
 
-}
 
 .image-item2 img {
     width: 350px;
@@ -388,14 +408,8 @@
 }
 
 footer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     height: 30%;
     width: 100%;
-    margin-top: 2900px;
     background-color: #212121;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.25);
     /* شادو کم‌رنگ */
@@ -407,9 +421,6 @@ footer {
 
 }
 
-.container {
-    max-width: 1170px;
-}
 
 .row {
     display: flex;
@@ -475,7 +486,6 @@ ul {
     height: 40px;
     width: 40px;
     background-color: rgba(255, 255, 255, 0.2);
-    margin: 0 10px 10px 0;
     text-align: center;
     line-height: 40px;
     border-radius: 50%;

@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# my_website/settings.py
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,7 +46,14 @@ INSTALLED_APPS = [
     "music.apps.MusicConfig",
     "moshavere.apps.MoshavereConfig",
     "About.apps.AboutConfig",
+    "Azmoon.apps.AzmoonConfig",
+    "baron.apps.BaronConfig",
+    "intelligence_test.apps.IntelligenceTestConfig",
+    "personality_test.apps.PersonalityTestConfig",
+    "maintests.apps.MaintestsConfig",
     "ckeditor",
+    "crispy_forms",
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
