@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as message_constants
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,11 +26,7 @@ SECRET_KEY = 'django-insecure-)=uh$&d5&-tc%v-b+fwgbp!c70%izyh&_f)v=8&n1&2lfe=2w5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG == True:
-    ALLOWED_HOSTS = []
-else:
-    ALLOWED_HOSTS = ['ashkrafiei.ir','127.0.0.1','87.107.104.134','[::1]']
-
+ALLOWED_HOSTS = ['ashkrafiei.ir','127.0.0.1','87.107.104.134','[::1]']
 
 # my_website/settings.py
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
@@ -59,7 +55,6 @@ INSTALLED_APPS = [
     "crispy_forms",
     'crispy_bootstrap5',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -93,15 +88,8 @@ WSGI_APPLICATION = 'AshkanRafie.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-if DEBUG == True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
+
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ASHKANRAFIEDB',
@@ -114,7 +102,6 @@ else:
         },
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -148,20 +135,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-if DEBUG == True:
 
-    STATIC_URL = 'static/'
-    STATICFILES_DIRS = [
-        BASE_DIR / "static",
-    ]
-    MEDIA_URL = "media/"
-    MEDIA_ROOT = BASE_DIR / "uploads/"
-
-else:
-    STATIC_URL = '/static/'
-    STATIC_ROOT = '/var/www/static'
-    MEDIA_URL = "media/"
-    MEDIA_ROOT = "/var/www/uploads"
+STATIC_URL = '/static/'
+STATIC_ROOT = '/var/www/static'
+MEDIA_URL = "media/"
+MEDIA_ROOT = "/var/www/uploads"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -169,16 +147,16 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "account.User"
 
-
 MESSAGE_TAGS = {
     message_constants.DEBUG: "secondary",
     message_constants.INFO: "info",
     message_constants.SUCCESS: "success",
     message_constants.WARNING: "warning",
     message_constants.ERROR: "danger",
-}   
+}
 
 
 SILENCED_SYSTEM_CHECKS = [
     "ckeditor.W001",  # CKEditor 4.22.1 warning
 ]
+
